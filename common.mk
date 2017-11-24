@@ -1,5 +1,7 @@
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
+AOST_VERSION = "UltraAOST-V0.1"
+
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
     ro.com.google.clientidbase=android-google \
@@ -12,7 +14,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.opa.eligible_device=true \
     ro.setupwizard.rotation_locked=true \
     ro.caf.version=$(shell grep "<default revision=" .repo/manifest.xml | awk -F'"' '{print $$2}' | awk  -F "/" '{print $$3}') \
-    ro.aosp-caf.version=$(shell grep "/AOSP-CAF" -A1 .repo/manifest.xml | tail -1 | awk -F'"' '{print $$2}' | awk -F "/" '{print $$3}')
+    ro.aosp-caf.version=$(shell grep "/AOSP-CAF" -A1 .repo/manifest.xml | tail -1 | awk -F'"' '{print $$2}' | awk -F "/" '{print $$3}') \
+    ro.aost.version=$(shell echo $(AOST_VERSION))
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
