@@ -18,8 +18,10 @@
 
 AOST_TARGET_PACKAGE := $(PRODUCT_OUT)/UltraAOST-$(AOST_VERSION).zip
 
-.PHONY: bacon
-bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
+.PHONY: otapackage bacon
+otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
+bacon: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(AOST_TARGET_PACKAGE)
-	$(hide) $(MD5SUM) $(AOST_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(AOST_TARGET_PACKAGE).md5sum
-	@echo "Package Complete: $(AOST_TARGET_PACKAGE)" >&2
+	$(hide) $(MD5SUM) $(AOST_TARGET_PACKAGE) > $(AOST_TARGET_PACKAGE).md5sum
+	@echo "Package Complete: $(AOST_TARGET_PACKAGE)"
+
