@@ -11,8 +11,8 @@ PRODUCT_COPY_FILES += \
     vendor/aost/prebuilt/common/bin/whitelist:system/addon.d/whitelist \
 
 # Bootanimation
-PRODUCT_COPY_FILES += \
-    vendor/aost/prebuilt/common/media/bootanimation.zip:system/media/bootanimation.zip
+#PRODUCT_COPY_FILES += \
+#    vendor/aost/prebuilt/common/media/bootanimation.zip:system/media/bootanimation.zip
 
 # init.d support
 PRODUCT_COPY_FILES += \
