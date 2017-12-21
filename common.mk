@@ -97,13 +97,6 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     librsjni
 
-
-# Build ParanoidCamera
- ifneq ($(TARGET_USES_AOSP_CAMERA),true)
- PRODUCT_PACKAGES += ParanoidCamera
- endif
-
-
 # OMS
 PRODUCT_PACKAGES += \
     ThemeInterfacer
